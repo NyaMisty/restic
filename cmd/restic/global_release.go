@@ -1,5 +1,5 @@
-//go:build !debug && !profile
-// +build !debug,!profile
+//go:build false && !debug && !profile
+// +build false,!debug,!profile
 
 package main
 
