@@ -29,7 +29,7 @@ import (
 
 const MinPackSize = 4 * 1024 * 1024
 const DefaultPackSize = 16 * 1024 * 1024
-const MaxPackSize = 128 * 1024 * 1024
+const MaxPackSize uint64 = 4096 * 1024 * 1024
 
 // Repository is used to access a repository in a backend.
 type Repository struct {
@@ -129,7 +129,7 @@ func New(be backend.Backend, opts Options) (*Repository, error) {
 	if opts.PackSize == 0 {
 		opts.PackSize = DefaultPackSize
 	}
-	if opts.PackSize > MaxPackSize {
+	if uint64(opts.PackSize) > uint64(MaxPackSize) {
 		return nil, fmt.Errorf("pack size larger than limit of %v MiB", MaxPackSize/1024/1024)
 	} else if opts.PackSize < MinPackSize {
 		return nil, fmt.Errorf("pack size smaller than minimum of %v MiB", MinPackSize/1024/1024)
