@@ -56,7 +56,7 @@ jobs:
           git submodule update --remote      
 
       ### XXX: Keep alive cron-type workflows
-      - uses: gautamkrishnar/keepalive-workflow@master
+      - uses: NyaMisty/keepalive-workflow@master
       
 
       ##########################################################
