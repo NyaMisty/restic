@@ -29,7 +29,7 @@ import (
 
 const MinPackSize = 4 * 1024 * 1024
 const DefaultPackSize = 16 * 1024 * 1024
-const MaxPackSize uint64 = 4096 * 1024 * 1024
+const MaxPackSize uint64 = 3072 * 1024 * 1024
 
 // Repository is used to access a repository in a backend.
 type Repository struct {
